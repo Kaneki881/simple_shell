@@ -10,7 +10,7 @@ void custom_exit(char *arg[], char *line, int exitstatus)
 {
 	if (arg[1])
 	{
-		if (is_valid_exit_number(arg[1]))
+		if (valid_exit(arg[1]))
 		{
 			exitstatus = atoi(arg[1]);
 		}
