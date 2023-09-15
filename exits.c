@@ -35,7 +35,7 @@ void custom_exit(char *arg[], char *line, int exitstatus)
  */
 int valid_exit(char *arg)
 {
-	if (arg[0] != '-' && check_if_numeric(arg))
+	if (arg[0] != '-' && is_numeric(arg))
 		return (1);
 	else
 		return (0);
