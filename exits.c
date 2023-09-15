@@ -6,27 +6,27 @@
  * @line: The user input command.
  * @exitstatus: Exit status for the shell program.
  */
-void custom_exit(char *arg[], char *line, int exitstatus)
+void custom_exit(char *arg[], char *line, int status)
 {
 	if (arg[1])
 	{
 		if (valid_exit(arg[1]))
 		{
-			exitstatus = atoi(arg[1]);
+			status = atoi(arg[1]);
 		}
 		else
 		{
 			fprintf(stderr, "./shell: exit: invalid exit code: %s\n", arg[1]);
-			exitstatus = 2;
+			status = 2;
 		}
 	}
-	else if (exitstatus == -1)
+	else if (status == -1)
 	{
-		exitstatus = EXIT_SUCCESS;
+		status = EXIT_SUCCESS;
 	}
 
 	free(line);
-	exit(exitstatus);
+	exit(status);
 }
 /**
  * valid_exit - checks if the argument is a valid exit code or not
