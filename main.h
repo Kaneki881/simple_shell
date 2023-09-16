@@ -17,4 +17,6 @@ int is_numeric(const char *str);
 void _path(char *b, char *path, char **fullpath);
 int execute_command(char **arguments, char *executable_path, char *user_input);
 void handle_execution_error(char *executable_path, char **arguments, char *user_input);
+void print_environment(void);
+int parse_input(char *input_line, char **arguments);
 #endif
