@@ -32,7 +32,7 @@ int execute_command(char **arguments, char *executable_path, char *user_input)
 
 	if (strcmp(arguments[0], "exit") == 0)
 	{
-		handle_exit(arguments, user_input, 0);
+		custom_exit(arguments, user_input, 0);
 		return -1;
 	}
 
