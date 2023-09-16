@@ -42,7 +42,7 @@ int execute_command(char **arguments, char *executable_path, char *user_input)
 	{
 		if (execve(executable_path, arguments, environ) == -1)
 		{
-			cmd_error(executable_path, arguments, user_input);
+			handle_execution_error(executable_path, arguments, user_input);
 			fprintf(stderr, "./shell: %s: command not found\n", user_input);
 			exit(EXIT_FAILURE);
 		}
