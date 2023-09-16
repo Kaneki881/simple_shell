@@ -19,4 +19,7 @@ int execute_command(char **arguments, char *executable_path, char *user_input);
 void handle_execution_error(char *executable_path, char **arguments, char *user_input);
 void print_environment(void);
 int parse_input(char *input_line, char **arguments);
+int get_type_cmd(const char *line);
+ssize_t read_cmd(char **line, size_t *len);
+int rm_whitespace(char *str);
 #endif
