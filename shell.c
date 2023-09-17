@@ -12,7 +12,7 @@ void shell(void)
 	size_t len = 0;
 	ssize_t R;
 	/* stores the number of characters read by the read_cmd function */
-	int exitstatus = -1;
+	int status = -1;
 
 	while ((R = read_cmd(&line, &len)) != -1)
 	{
@@ -31,12 +31,12 @@ void shell(void)
 				break;
 			case COMMAND_EXIT:
 				parse_input(line, arg);
-				custom_exit(arg, line, exitstatus);
+				custom_exit(arg, line, status);
 				break;
 			default:
 				parse_input(line, arg);
 				_path(arg[0], path, &full);
-				exitstatus = execute_command(arg, full, line);
+				status = execute_command(arg, full, line);
 				break;
 		}
 	}
