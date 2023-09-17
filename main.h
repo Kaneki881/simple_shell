@@ -27,4 +27,5 @@ int get_type_cmd(const char *line);
 ssize_t read_cmd(char **line, size_t *len);
 int rm_whitespace(char *str);
 void shell(void);
+void print_env(void);
 #endif
