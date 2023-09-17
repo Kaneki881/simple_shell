@@ -1,6 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define COMMAND_ENV 1
+#define COMMAND_EXIT 2
+#define COMMAND_CUSTOM 3
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -22,4 +26,5 @@ int parse_input(char *input_line, char **arguments);
 int get_type_cmd(const char *line);
 ssize_t read_cmd(char **line, size_t *len);
 int rm_whitespace(char *str);
+void shell(void);
 #endif
