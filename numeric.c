@@ -11,7 +11,7 @@ int is_numeric(const char *str)
 	int hasDigits = 0;  /* Added a flag to track if any digits are found */
 
 	if (str == NULL || *str == '\0')
-		return 0;
+		return (0);
 
 	if (str[i] == '-')
 		i++; /* Allow negative numbers */
@@ -21,10 +21,10 @@ int is_numeric(const char *str)
 		if (str[i] >= '0' && str[i] <= '9')
 			hasDigits = 1; /* Set the flag if a digit is found */
 		else
-			return 0; /* Non-numeric character found */
+			return (0); /* Non-numeric character found */
 		i++;
 	}
 
-	return hasDigits; /* Return 1 if at least one digit is found, else 0 */
+	return (hasDigits); /* Return 1 if at least one digit is found, else 0 */
 }
 

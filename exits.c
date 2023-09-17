@@ -4,7 +4,7 @@
  * custom_exit - Function to handle custom shell program termination.
  * @arg: Array of strings representing command line with arguments.
  * @line: The user input command.
- * @exitstatus: Exit status for the shell program.
+ * @status: Exit status for the shell program.
  */
 void custom_exit(char *arg[], char *line, int status)
 {

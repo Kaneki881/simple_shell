@@ -8,11 +8,11 @@
 int rm_whitespace(char *str)
 {
 	int len = strlen(str);
-	int start = 0; 
-	int end = len - 1; 
+	int start = 0;
+	int end = len - 1;
 	int i;
 
-	
+
 	while (str[start] == ' ' || str[start] == '\t')
 	{
 		start++;
@@ -23,13 +23,13 @@ int rm_whitespace(char *str)
 		end--;
 	}
 
-	
+
 	for (i = 0; i <= end - start; i++)
 	{
 		str[i] = str[start + i];
 	}
 	str[i] = '\0';
 
-	
+
 	return (i == 0);
 }

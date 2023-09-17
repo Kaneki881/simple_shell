@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * handle_execution_error - handles execution errors
+ * handle_error - handles execution errors
  *
- * @executable_path: full path that specifies the location of the executable file
+ * @executable_path: full path that specifies the location
+ * of the executable file
  * @arguments: command and its arguments
  * @user_input: user command
  */
-void handle_execution_error(char *executable_path, char **arguments, char *user_input)
+void handle_error(char *executable_path, char **arguments, char *user_input)
 {
 	if (execve(executable_path, arguments, environ) == -1)
 	{
@@ -22,7 +23,8 @@ void handle_execution_error(char *executable_path, char **arguments, char *user_
 /**
  * execute_command - executes a command by forking a new process
  * @arguments: command and its arguments
- * @executable_path: full path that specifies the location of the executable file
+ * @executable_path: full path that specifies the location
+ * of the executable file
  * @user_input: user command
  * Return: exit status of the executed command or -1 on error
  */
@@ -42,7 +44,7 @@ int execute_command(char **arguments, char *executable_path, char *user_input)
 	{
 		if (execve(executable_path, arguments, environ) == -1)
 		{
-			handle_execution_error(executable_path, arguments, user_input);
+			handle_error(executable_path, arguments, user_input);
 			fprintf(stderr, "./shell: %s: command not found\n", user_input);
 			exit(EXIT_FAILURE);
 		}
@@ -65,6 +67,5 @@ int execute_command(char **arguments, char *executable_path, char *user_input)
 		perror("Failed to fork a new process");
 		return (-1);
 	}
-	/*This return statement is added to handle the case when none of the conditions above are met.*/
-    return (-1);
+	return (-1);
 }
