@@ -7,11 +7,11 @@
  */
 int is_numeric(const char *str)
 {
-	if (str == NULL || *str == '\0')
-		return 0;
-
 	int i = 0;
 	int hasDigits = 0;  /* Added a flag to track if any digits are found */
+
+	if (str == NULL || *str == '\0')
+		return 0;
 
 	if (str[i] == '-')
 		i++; /* Allow negative numbers */

@@ -25,7 +25,7 @@ void shell(void)
 		switch (get_type_cmd(line))
 		{
 			case COMMAND_ENV:
-				print_env();
+				print_environment();
 				free(line);
 				exit(EXIT_SUCCESS);
 				break;

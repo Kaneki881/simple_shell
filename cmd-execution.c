@@ -33,7 +33,7 @@ int execute_command(char **arguments, char *executable_path, char *user_input)
 	if (strcmp(arguments[0], "exit") == 0)
 	{
 		custom_exit(arguments, user_input, 0);
-		return -1;
+		return (-1);
 	}
 
 	child_pid = fork();
@@ -55,14 +55,16 @@ int execute_command(char **arguments, char *executable_path, char *user_input)
 		free(executable_path);
 
 		if (WIFEXITED(status))
-			return WEXITSTATUS(status);
+			return (WEXITSTATUS(status));
 
 		fprintf(stderr, "./shell: %s: terminated abnormally\n", user_input);
-		return -1;
+		return (-1);
 	}
 	else
 	{
 		perror("Failed to fork a new process");
-		return -1;
+		return (-1);
 	}
+	/*This return statement is added to handle the case when none of the conditions above are met.*/
+    return (-1);
 }
